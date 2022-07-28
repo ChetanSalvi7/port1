@@ -1,3 +1,44 @@
+/*------------- Loading Css-------------- */
+.lds-ring {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin: 8px;
+  border: 8px solid #08fdd8;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #08fdd8 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -68,7 +109,7 @@ a {
   border-bottom: 2px solid #282828;
   transition: color 0.3s, background-color 0.3s;
 }
-a:hover{
+a:hover {
   color: #08fdd8;
 }
 .navbar-social {
@@ -120,16 +161,234 @@ h1 {
   line-height: 10.7rem;
   position: relative;
 }
-.blast-root .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
+h1 span {
+  color: #fff;
+  animation-delay: 2s;
 }
-.blast-root .letter {
-  transform-origin: 50% 100%;
-  display: inline-block;
-  line-height: 1em;
+.letters {
+  font-weight: 600;
+}
+.text-zone p {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.gray-text {
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  margin-top: 3rem;
+  display: block;
+  color: #8d8d8d;
+}
+.flat-button {
+  color: #08fdd8;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+}
+.flat-button div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #08fdd8;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.J-letter {
+  color: #08fdd8;
+}
+.flat-button span.text {
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+}
+
+.flat-button div:before,
+.flat-button div:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.flat-button div:hover {
+  color: #000000;
+  transition-delay: 0s;
+}
+
+.flat-button div:hover:before {
+  transition-delay: 0s;
+}
+
+.flat-button div:hover:after {
+  background: #08fdd8;
+  transition-delay: 0.1s;
+}
+.flat-button div:before,
+.flat-button div:after {
+  bottom: 0;
+  width: 0;
+  height: 100%;
+}
+
+.flat-button div:before {
+  right: 0;
+  border: 3px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  z-index: 6;
+}
+
+.flat-button div:after {
+  left: 0;
+}
+
+.flat-button div:hover:before,
+.flat-button div:hover:after {
+  width: 100%;
+}
+
+/* ------------ */
+.scroll-down {
+  position: absolute;
+  right: 10px;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+}
+.scroll-down-left {
+  left: 10px;
+  right: auto;
+}
+.scroll-down span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.scroll-down i {
+  margin-top: 10px;
+  width: 10px;
+  font-size: 14px;
+}
+
+
+.section-work {
+  overflow: hidden;
+  min-height: 0;
+}
+.fake-big {
+  position: absolute;
+  top: -1rem;
+  left: 32vw;
+  z-index: -1;
+  font-size: 48rem;
+  color: rgba(255,255,255,0.04);
+}
+h2 {
+  color: #08fdd8;
+  font-weight: 400;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 40px;
+  left: -10px;
+  font-size: 7.3rem;
+  line-height: 6.7rem;
+}
+.section-work .text-zone>div:first-child {
+  max-width: 800px;
+}
+.section-work .text-zone>div:last-child {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.section-work .text-zone {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+}
+.fake-big-right {
+  position: absolute;
+  top: 25rem;
+  left: -5vw;
+  z-index: -1;
+  font-size: 48rem;
+  color: rgba(255,255,255,0.04);
+}
+.section-about {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto !important;
+  width: 100%;
+  min-height: 0px !important;
+  padding: 0 3rem;
+  justify-content: space-between;
+}
+.section-about .text-zone {
+  width: 40%;
+  height: auto !important;
+}
+.text-zone p {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.fake-big-end {
+  top: -10rem;
+  left: 2vw;
+}
+.section-about .skills-charts {
+  width: 60%;
+  flex: 1 1 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.section-about #myCanvasContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
